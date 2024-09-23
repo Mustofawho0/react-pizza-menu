@@ -1,19 +1,15 @@
 import React from 'react';
-import { pizzaData } from '../content/data';
+import './style.css';
 
-export default function Pizza() {
+export default function Pizza(props) {
   return (
-    <React.Fragment>
-      <h2>Our Menu</h2>
-      {pizzaData.map((p, i) => (
-        <div key={i}>
-          <h1>{p.name}</h1>
-          <img src={p.photoName} alt={p.photoName} />
-          <h4>{p.ingredients}</h4>
-          <h2>{p.price}</h2>
-          <h3>{p.soldOut}</h3>
-        </div>
-      ))}
-    </React.Fragment>
+    <div className='pizza'>
+      <img src={props.image} alt={props.pizzaName} />
+      <div>
+        <h3>{props.pizzaName}</h3>
+        <p>{props.ingredient}</p>
+        <span>{props.price}</span>
+      </div>
+    </div>
   );
 }

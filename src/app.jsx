@@ -1,10 +1,12 @@
 import React from 'react';
-import Pizza from './components/Pizza';
+import Menu from './components/Menu';
+import './index.css';
+
 function App() {
   return (
-    <React.Fragment>
-      <Pizza />
-    </React.Fragment>
+    <div className='container'>
+      <Menu />
+    </div>
   );
 }
 export default App;
