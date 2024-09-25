@@ -1,15 +1,15 @@
 import React from 'react';
 import './style.css';
 
-export default function Pizza(props) {
+export default function Pizza({ pizza }) {
   return (
-    <div className='pizza'>
-      <img src={props.image} alt={props.pizzaName} />
+    <li className={`pizza ${pizza.soldOut ? 'sold-out' : ''}`}>
+      <img src={pizza.photoName} alt={pizza.name} />
       <div>
-        <h3>{props.pizzaName}</h3>
-        <p>{props.ingredient}</p>
-        <span>{props.price}</span>
+        <h3>{pizza.name}</h3>
+        <p>{pizza.ingredients}</p>
+        <span>{pizza.soldOut ? 'SOLD OUT!' : pizza.price}</span>
       </div>
-    </div>
+    </li>
   );
 }
